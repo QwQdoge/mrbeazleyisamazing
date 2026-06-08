@@ -1,0 +1,132 @@
+/* Core Styling - Premium Light Theme */
+:root {
+  --bg-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-muted: #666666;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-body);
+}
+
+.gallery-container {
+  width: 100%;
+  max-width: 100vw;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-slider {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  padding: 20px 0;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  align-items: center;
+}
+
+.gallery-slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.gallery-slider.single-item {
+  justify-content: center;
+}
+
+/* Spinner and Loader in Light Theme */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 0, 0, 0.05);
+  border-top-color: var(--text-dark);
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Gallery Item (Original aspect ratio, soft luxury shadows) */
+.gallery-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.gallery-item img {
+  display: block;
+  max-width: 85vw;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  /* Soft grey shadow for white background */
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08), 
+              0 0 1px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.gallery-item img:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 
+              0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Elegant Text Signature underneath */
+.name-signature {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s forwards;
+  user-select: none;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
