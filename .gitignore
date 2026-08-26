@@ -1,0 +1,4 @@
+# Desktop metadata is not website source.
+.DS_Store
+Thumbs.db
+desktop.ini
