@@ -2,3 +2,17 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Local secrets and machine-specific state
+.env
+.env.*
+!.env.example
+!.env.sample
+credentials*.json
+secrets*.json
+*.key
+*.p12
+*.pfx
+.netrc
+.npmrc
+.pypirc
