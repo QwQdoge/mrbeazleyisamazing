@@ -25,12 +25,12 @@ a local HTTP server. Do not treat a file-manager preview as browser acceptance.
 | --- | --- |
 | Page source and gallery assets | Their existing owning directory in this repository. |
 | A stable code/hosting contract | docs/ when one is needed. |
-| Plans, audits, decisions, agent journals, and historical reports | /home/shekong/Documents/Obsidian Vault/MeoArch/Projects/mr-beazley-is-amazing/ |
-| Reproducible build work | /home/shekong/Projects/outputs/mr-beazley-is-amazing/build/ |
-| Hosting/install handoff | /home/shekong/Projects/outputs/mr-beazley-is-amazing/install/ |
-| Validation evidence | /home/shekong/Projects/outputs/mr-beazley-is-amazing/validation/<UTC-run-id>/ |
-| Release/archive packages | /home/shekong/Projects/outputs/mr-beazley-is-amazing/packages/ |
-| Disposable generated work | /home/shekong/Projects/outputs/mr-beazley-is-amazing/tmp/ |
+| Plans, audits, decisions, agent journals, and historical reports | $MEO_DOCS_ROOT/Projects/mr-beazley-is-amazing/ |
+| Reproducible build work | $MEO_OUTPUT_ROOT/mr-beazley-is-amazing/build/ |
+| Hosting/install handoff | $MEO_OUTPUT_ROOT/mr-beazley-is-amazing/install/ |
+| Validation evidence | $MEO_OUTPUT_ROOT/mr-beazley-is-amazing/validation/<UTC-run-id>/ |
+| Release/archive packages | $MEO_OUTPUT_ROOT/mr-beazley-is-amazing/packages/ |
+| Disposable generated work | $MEO_OUTPUT_ROOT/mr-beazley-is-amazing/tmp/ |
 
 Use a UTC run identifier in the form YYYY-MM-DDTHHMMSSZ-short-label, such as
 2026-08-26T143015Z-gallery-check. Use the
