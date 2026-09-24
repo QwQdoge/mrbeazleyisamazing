@@ -19,14 +19,14 @@ behavior, the versioned resources, and the manifest-generation helper.
 - Do not create root-level plans, audits, architecture drafts, agent journals,
   screenshots, build logs, or temporary notes.
 - Store plans, decisions, work journals, and historical reports under
-  /home/shekong/Documents/Obsidian Vault/MeoArch/Projects/mr-beazley-is-amazing/
+  $MEO_DOCS_ROOT/Projects/mr-beazley-is-amazing/
   in 00-inbox, 01-overview, 02-decisions, 03-work, 04-validation, or
   99-archive.
 
 ## Output rules
 
 New durable output belongs only under
-/home/shekong/Projects/outputs/mr-beazley-is-amazing/:
+$MEO_OUTPUT_ROOT/mr-beazley-is-amazing/:
 
 | Kind | Path |
 | --- | --- |
