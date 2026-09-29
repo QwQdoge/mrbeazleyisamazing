@@ -1,47 +1,9 @@
 # Mr Beazley Gallery agent rules
 
-This is a small static gallery. Keep work scoped to the page, its style and
-behavior, the versioned resources, and the manifest-generation helper.
+This is a small static gallery. Keep changes limited to `index.html`, `style.css`, `main.js`, `resources/`, and the manifest-generation helper.
 
-## Source rules
+When gallery images intentionally change, run `python3 scripts/scan_resources.py` so `resources/manifest.json` stays in sync, then inspect the page through a local HTTP server. Preserve user-provided images and their intended ordering; do not delete or reorder assets as routine cleanup.
 
-- HTML belongs in index.html, styles in style.css, and gallery behavior in
-  main.js.
-- Gallery images and resources/manifest.json are source-owned assets. Preserve
-  user-provided images and do not delete/reorder them as routine cleanup.
-- When image files intentionally change, regenerate the manifest with
-  scripts/scan_resources.py and validate in a local HTTP-served browser page.
+Use `$MEO_DOCS_ROOT/Projects/mr-beazley-is-amazing/` for plans/decisions/audits and `$MEO_OUTPUT_ROOT/mr-beazley-is-amazing/{build,install,validation,packages,tmp}/` for generated output. Do not create screenshots, logs, plans, or temporary reports at the repository root.
 
-## Documentation and records
-
-- README.md and this file are the only root orientation documents. Put a
-  source-bound contract in docs/ if one becomes necessary.
-- Do not create root-level plans, audits, architecture drafts, agent journals,
-  screenshots, build logs, or temporary notes.
-- Store plans, decisions, work journals, and historical reports under
-  $MEO_DOCS_ROOT/Projects/mr-beazley-is-amazing/
-  in 00-inbox, 01-overview, 02-decisions, 03-work, 04-validation, or
-  99-archive.
-
-## Output rules
-
-New durable output belongs only under
-$MEO_OUTPUT_ROOT/mr-beazley-is-amazing/:
-
-| Kind | Path |
-| --- | --- |
-| Build work | build/ |
-| Hosting/install handoff | install/ |
-| Validation evidence | validation/<UTC-run-id>/ |
-| Release/archive packages | packages/ |
-| Disposable work | tmp/ |
-
-Use YYYY-MM-DDTHHMMSSZ-short-label as the UTC validation run identifier.
-
-## Safety
-
-- Do not publish, overwrite a hosted page, remove gallery assets, reset the
-  worktree, or perform broad deletion without explicit user authorization.
-- A local preview proves only that local browser rendering was checked. Record
-  the viewport/browser/result in the validation evidence when validation is
-  requested.
+A local browser preview proves only local rendering. Do not publish or overwrite a hosted gallery without explicit authorization, and do not reset/clean the worktree to organize it.
