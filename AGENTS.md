@@ -1,9 +1,27 @@
 # Mr Beazley Gallery agent rules
 
-This is a small static gallery. Keep changes limited to `index.html`, `style.css`, `main.js`, `resources/`, and the manifest-generation helper.
+## Scope
 
-When gallery images intentionally change, run `python3 scripts/scan_resources.py` so `resources/manifest.json` stays in sync, then inspect the page through a local HTTP server. Preserve user-provided images and their intended ordering; do not delete or reorder assets as routine cleanup.
+This is a small static gallery.
 
-Use `$MEO_DOCS_ROOT/Projects/mr-beazley-is-amazing/` for plans/decisions/audits and `$MEO_OUTPUT_ROOT/mr-beazley-is-amazing/{build,install,validation,packages,tmp}/` for generated output. Do not create screenshots, logs, plans, or temporary reports at the repository root.
+- `index.html`: page structure.
+- `style.css`: styling.
+- `main.js`: gallery behavior.
+- `resources/`: source-controlled images and `manifest.json`.
+- `scripts/scan_resources.py`: manifest generator.
 
-A local browser preview proves only local rendering. Do not publish or overwrite a hosted gallery without explicit authorization, and do not reset/clean the worktree to organize it.
+Inspect only the affected files and `git status`; do not turn small gallery work into a repository-wide audit.
+
+## Validation
+
+If gallery images are intentionally added/removed/reordered, regenerate the manifest with `scripts/scan_resources.py` and review the resulting diff.
+
+For UI/behavior changes, serve the site through local HTTP and inspect the affected viewport/browser state. A file-manager preview is not browser validation, and a local preview is not proof of live hosting.
+
+## Safety and files
+
+Preserve user-provided gallery assets. Do not publish or overwrite a hosted gallery without explicit authorization.
+
+Keep plans/records under `$MEO_DOCS_ROOT/Projects/mr-beazley-is-amazing/` and generated evidence/output under `$MEO_OUTPUT_ROOT/mr-beazley-is-amazing/{build,install,validation,packages,tmp}/`. If those roots are unset, do not invent machine-specific paths.
+
+Avoid destructive Git cleanup or broad deletion.
